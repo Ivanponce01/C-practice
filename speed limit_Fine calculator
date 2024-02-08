@@ -8,13 +8,13 @@ int main(){
     string name;
     int speed;
 
-    cout << "Enter name of the driver";
+    cout << "Enter name of the driver: ";
     getline(cin,name);
     
-    cout << "Enter speed speed limit";
+    cout << "Enter speed speed limit: ";
     cin >> speedLimit;
     
-    cout << "Enter driving speed";
+    cout << "Enter driving speed: ";
     cin >> drivingSpeed;
     
     overSpeed = drivingSpeed - speedLimit;
@@ -29,9 +29,9 @@ int main(){
                    fine = 150.00;
                    else if (overSpeed > 15)
                         fine = 150 + 20.00 * overSpeed - 15; 
-    
-    cout << "You are driving over the speed limit by: " << overSpeed << endl;
-    cout << "Your fine is: " << fine << endl;
+
+    cout << "You are driving over the speed limit by: " << setw(1)<< overSpeed <<"MPH"<< endl;
+    cout << "Your fine is: $" <<setw(1)<< fine << endl;
     }
     
     else 
@@ -43,3 +43,4 @@ int main(){
 
     return 0;
 }
+
