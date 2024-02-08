@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+    double overSpeed, fine=0, speedLimit, drivingSpeed;
+    string name;
+    int speed;
+
+    cout << "Enter name of the driver";
+    getline(cin,name);
+    
+    cout << "Enter speed speed limit";
+    cin >> speedLimit;
+    
+    cout << "Enter driving speed";
+    cin >> drivingSpeed;
+    
+    overSpeed = drivingSpeed - speedLimit;
+    
+    if (overSpeed > 0 )
+    {
+        if (overSpeed <=5)
+            fine = 20.00;
+        else if (overSpeed <=10)
+              fine = 75.00;
+             else if (overSpeed <=15)
+                   fine = 150.00;
+                   else if (overSpeed > 15)
+                        fine = 150 + 20.00 * overSpeed - 15; 
+    
+    cout << "You are driving over the speed limit by: " << overSpeed << endl;
+    cout << "Your fine is: " << fine << endl;
+    }
+    
+    else 
+        cout << "\n" << name << ", your are driving within the speed limit. "<< endl;
+    
+    
+    
+  
+
+    return 0;
+}
