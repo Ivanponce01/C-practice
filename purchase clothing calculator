@@ -1,0 +1,61 @@
+
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int main(){
+    string _lineString;
+    istringstream inSS;
+    string shirts;
+    string pants;
+    float shirtsPrice = 19.99;
+    float pantsPrice = 29.99;
+    float amountS;
+    float amountP;
+    float cartCheckout;
+    float totalPrice;
+    float totalTax;
+    float tax_percentage = .17;
+    bool inputDone;
+    
+    inputDone = true;
+    
+    cout << "What will you be purchasing today? : ";
+    getline(cin, _lineString); 
+    
+    while (inputDone){
+    
+    
+    if( _lineString == "pants"){
+        cout << "How many would you like? " ;
+        cin >> amountP;
+           cartCheckout = amountP * pantsPrice;
+    }
+        else if (_lineString == "shirts"){
+                cout << "How many would you like? " ;
+                cin >> amountS;
+                   cartCheckout = amountS * shirtsPrice; 
+        }
+    
+    
+            else if( _lineString != "shirts"){
+                 cout << "Sorry please enter a vaild item." << endl;
+                 break;
+            }
+                 
+    
+    
+    totalTax = cartCheckout * tax_percentage;
+    totalPrice = totalTax + cartCheckout;
+    
+    
+    
+    cout << "Perfect you total will be: $" << totalPrice << endl;
+    cout << "You total amount of taxes paid: $" << totalTax << endl;
+    cout << "Will this be using debit or credit?";
+    
+    return 0;
+}
+
+}
